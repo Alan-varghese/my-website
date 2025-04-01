@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .checkmark {
+            font-size: 60px;
+            color: green;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-label {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn:active {
+            background-color: #003d7a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Here is your Legal-Ease ⚖️ confirmation email!</h2>
+        <p>After your email has been verified, you can now access your account.</p>
+        <div class="checkmark">✔</div>
+        <label class="checkbox-label">
+            <input type="checkbox" checked disabled> You have confirmed your email.
+        </label>
+
+        <!-- Supabase Confirmation Link -->
+        <a href="{{ .ConfirmationURL }}{{ .Token }}{{ .TokenHash }}{{ .SiteURL }}{{ .Email }}{{ .Data }}{{ .RedirectTo }}"
+            class="btn">Confirm Your Email</a>
+
+        <!-- Google Form for Visual Confirmation -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScva2nBKzhPGBfqXm62EqEou_WHRHPqKAWH9K14XsrZIGpJ1g/viewform?usp=dialog"
+            class="btn" style="background-color: #28a745;">Go to Confirmation Page</a>
+    </div>
+</body>
+
+</html>
