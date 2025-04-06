@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Confirmed</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <title>LegalEase Confirmation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 50px auto;
-            text-align: center;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        h2 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
+    .confirmation-box {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.8s ease;
+    }
 
-        p {
-            color: #555;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .checkmark {
-            font-size: 60px;
-            color: green;
-            margin-bottom: 20px;
-        }
+    .tick-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+    }
 
-        .checkbox-label {
-            font-size: 18px;
-            color: #555;
-            margin-top: 20px;
-            display: block;
-        }
+    .confirmation-box h1 {
+      font-size: 26px;
+      color: #333;
+      margin-bottom: 12px;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
+    .confirmation-box p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
+    .app-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+      transition: all 0.3s ease;
+    }
 
-        .btn:active {
-            background-color: #003d7a;
-        }
-    </style>
+    .app-btn:hover {
+      background: #45a049;
+      box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
+      transform: scale(1.05);
+    }
+
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <h2>Here is your Legal-Ease ⚖️ confirmation email!</h2>
-        <p>After your email has been verified, you can now access your account.</p>
-        <div class="checkmark">✔</div>
-        <label class="checkbox-label">
-            <input type="checkbox" checked disabled> You have confirmed your email.
-        </label>
+  <div class="confirmation-box">
+    <!-- Animated Check SVG -->
+    <svg class="tick-icon" viewBox="0 0 52 52">
+      <circle cx="26" cy="26" r="25" fill="none" stroke="#4CAF50" stroke-width="3" />
+      <path fill="none" stroke="#4CAF50" stroke-width="4" d="M14 27l7 7 17-17"/>
+    </svg>
 
-        <!-- Supabase Confirmation Link -->
-        <a href="{{ .ConfirmationURL }}{{ .Token }}{{ .TokenHash }}{{ .SiteURL }}{{ .Email }}{{ .Data }}{{ .RedirectTo }}"
-            class="btn">Confirm Your Email</a>
-
-        <!-- Google Form for Visual Confirmation -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScva2nBKzhPGBfqXm62EqEou_WHRHPqKAWH9K14XsrZIGpJ1g/viewform?usp=dialog"
-            class="btn" style="background-color: #28a745;">Go to Confirmation Page</a>
-    </div>
+    <h1>Confirmation Completed</h1>
+    <p>LegalEase confirmation completed. You can now use the mobile app.</p>
+    <button class="app-btn">Open App</button>
+  </div>
 </body>
-
 </html>
