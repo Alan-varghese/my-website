@@ -4,94 +4,53 @@
   <meta charset="UTF-8">
   <title>LegalEase Confirmation</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      background: linear-gradient(135deg, #f0f9ff, #e0c3fc);
+      font-family: 'Segoe UI', sans-serif;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .confirmation-box {
-      background: white;
-      padding: 40px 50px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    .message-box {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
       max-width: 400px;
-      width: 100%;
-      animation: fadeIn 0.8s ease;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .tick {
+      font-size: 50px;
+      color: #4CAF50;
+      margin-bottom: 20px;
     }
 
-    .tick-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-    }
-
-    .confirmation-box h1 {
-      font-size: 26px;
+    .message {
+      font-size: 20px;
       color: #333;
-      margin-bottom: 12px;
-    }
-
-    .confirmation-box p {
-      color: #666;
-      font-size: 16px;
       line-height: 1.6;
     }
 
-    .app-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
-      transition: all 0.3s ease;
+    .app-name {
+      color: #4CAF50;
+      font-weight: bold;
     }
-
-    .app-btn:hover {
-      background: #45a049;
-      box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
-      transform: scale(1.05);
-    }
-
   </style>
 </head>
 <body>
-  <div class="confirmation-box">
-    <!-- Animated Check SVG -->
-    <svg class="tick-icon" viewBox="0 0 52 52">
-      <circle cx="26" cy="26" r="25" fill="none" stroke="#4CAF50" stroke-width="3" />
-      <path fill="none" stroke="#4CAF50" stroke-width="4" d="M14 27l7 7 17-17"/>
-    </svg>
 
-    <h1>Confirmation Completed</h1>
-    <p>LegalEase confirmation completed. You can now use the mobile app.</p>
-    <button class="app-btn">Open App</button>
+  <div class="message-box">
+    <div class="tick">✔️</div>
+    <div class="message">
+      Confirmation completed.<br>
+      You can now use the <span class="app-name">LegalEase</span> app.
+    </div>
   </div>
+
 </body>
 </html>
